@@ -1,9 +1,9 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: Data Science and MLOPS
+title: Data Science and MLOps
 author: Lukas Laib
-logo: logo.png
+logo: hdmlogo.png
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
