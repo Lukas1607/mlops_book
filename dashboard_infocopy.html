@@ -1,0 +1,713 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard &#8212; Data Science and MLOps</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/hdmlogo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Data Science and MLOps</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Dieses Buch durchsuchen ..." aria-label="Dieses Buch durchsuchen ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Erklärung
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="dataexplorationcopy.html">
+   Data Understanding &amp; Data Correction
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Navigation umschalten" aria-controls="site-navigation"
+                title="Navigation umschalten" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Laden Sie diese Seite herunter"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/dashboard_infocopy.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Quelldatei herunterladen" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="In PDF drucken"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Quell-Repository"><i
+                    class="fab fa-github"></i>Repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdashboard_infocopy.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Öffnen Sie ein Problem"><i class="fas fa-lightbulb"></i>offenes Thema</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Vollbildmodus"
+        title="Vollbildmodus"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Inhalt
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#home">
+   Home
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eda">
+   EDA
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#beispiel-prognose">
+   Beispiel Prognose
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#individuelle-preisprognose">
+   Individuelle Preisprognose
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Dashboard</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Inhalt </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#home">
+   Home
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eda">
+   EDA
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#beispiel-prognose">
+   Beispiel Prognose
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#individuelle-preisprognose">
+   Individuelle Preisprognose
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="dashboard">
+<h1>Dashboard<a class="headerlink" href="#dashboard" title="Permalink to this headline">¶</a></h1>
+<p>Das gesamte Dashboard wurde mit der Python-Bibliothek Streamlit erstellt. Das Dashboard teilt sich dabei in vier Sichten auf: Home, EDA, Beispiel_Prognose und Individuelle Preisprognose für Gebrauchtwagen. <br><br>
+Die Home bzw. Startseite gibt Nutzern einen kurzen Überblick über die Möglichkeiten und Optionen des Dashboards. Innerhalb der Seite EDA werden hingegen einige Visualisierungen aus der explorativen Datenanalyse dargestellt.
+In der Sicht Beispiel_Prognose können Preisprognosen des Modells dem “echten” Verkaufspreis gegenübergestellt werden dabei werden zufällige Gebrauchtwagen aus dem Datensatz herangezogen. Innerhalb der Seite zu individuellen Preisprognose können individuell Eingaben getätigt werden, um für eigene Autokonfigurationen Verkaufspreise vorherzusagen.</p>
+<div class="section" id="home">
+<h2>Home<a class="headerlink" href="#home" title="Permalink to this headline">¶</a></h2>
+<p>Die Homeseite ist einfach strukturiert und stellt lediglich Text innerhalb des Dashboards dar.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#-------------------</span>
+<span class="c1"># Import Python Bibliotheken</span>
+<span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span> 
+
+<span class="c1">#-------------------</span>
+<span class="c1"># Text der Startseite</span>
+<span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;# Data Science and MLOps&quot;</span><span class="p">)</span>
+
+<span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="o">.</span><span class="n">success</span><span class="p">(</span><span class="s2">&quot;Wähle eine Seite aus&quot;</span><span class="p">)</span>
+
+<span class="n">st</span><span class="o">.</span><span class="n">markdown</span><span class="p">(</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Innerhalb des Streamlit Dashboards werden die Ergebnisse des Projekts &quot;Data Science and MLOps&quot; für den Datensatz &quot;Used auction car prices&quot; dargestellt.</span>
+<span class="sd">    </span>
+<span class="sd">    ### Wähle eine der folgenden Seiten über das Seitenmenü aus:</span>
+<span class="sd">    - Beispiel Prognose</span>
+<span class="sd">    - EDA</span>
+<span class="sd">    - Individuelle Preisprognose für Gebrauchtwagen</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">df</span><span class="o">/</span><span class="n">nc1vtthj247d1h5l5689kdxh0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_48662</span><span class="o">/</span><span class="mf">3001522037.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#-------------------</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1"># Import Python Bibliotheken</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> 
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1">#-------------------</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;streamlit&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="eda">
+<h2>EDA<a class="headerlink" href="#eda" title="Permalink to this headline">¶</a></h2>
+<p>Plots innerhalb der EDA-Seite wurden mit Plotly dargestellt. Die Visaulisierungen sind dabei ein Auszug aus dem Punkt Data Understanding &amp; Correction.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#-------------------</span>
+<span class="c1"># Import Python Bibliotheken</span>
+
+<span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+<span class="c1">#-------------------</span>
+<span class="c1"># Titel und Beschreibung</span>
+
+<span class="n">st</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Dashboard MLOPS-Projekt&quot;</span><span class="p">)</span>
+
+<span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Visualisierungen ausgewählter Variablen des Datensates Used auction car prices.&quot;</span><span class="p">)</span>
+
+<span class="c1">#-------------------</span>
+<span class="c1"># Visualisierungen</span>
+
+<span class="c1"># Import des Datensatzes</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;/Users/lukas/Desktop/car_price_final.csv&quot;</span><span class="p">)</span>
+
+<span class="c1">#Erstellung des Sample-Dataframes</span>
+<span class="n">df_sample</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+
+<span class="c1"># Histogramm für Variable &quot;year&quot;</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">go</span><span class="o">.</span><span class="n">Histogram</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">df_sample</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">])])</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Histogramm: Jahr&quot;</span><span class="p">,</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s2">&quot;Jahre&quot;</span><span class="p">,</span>
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">&quot;Anzahl der Autos&quot;</span><span class="p">,</span>
+    <span class="n">plot_bgcolor</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+<span class="c1"># Plot!</span>
+<span class="n">st</span><span class="o">.</span><span class="n">plotly_chart</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+
+<span class="c1"># Histogramm für die Variable &quot;price&quot;</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">go</span><span class="o">.</span><span class="n">Histogram</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">df_sample</span><span class="p">[</span><span class="s2">&quot;price&quot;</span><span class="p">])])</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Histogramm: Preis&quot;</span><span class="p">,</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s2">&quot;Preis&quot;</span><span class="p">,</span>
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">&quot;Anzahl der Autos&quot;</span><span class="p">,</span>
+    <span class="n">plot_bgcolor</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+<span class="n">st</span><span class="o">.</span><span class="n">plotly_chart</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+
+<span class="c1"># Boxplot für die Variable &quot;price&quot;</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">go</span><span class="o">.</span><span class="n">Box</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">df_sample</span><span class="p">[</span><span class="s2">&quot;price&quot;</span><span class="p">])])</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Boxplot: Preis&quot;</span><span class="p">,</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s2">&quot;Preis&quot;</span><span class="p">,</span>
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">&quot;Preis in USD&quot;</span><span class="p">,</span>
+    <span class="n">plot_bgcolor</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+<span class="n">st</span><span class="o">.</span><span class="n">plotly_chart</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+
+<span class="c1"># Visualisierung Jahr / Preis</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="n">df_sample</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;price&quot;</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;price&quot;</span><span class="p">:</span><span class="s2">&quot;Preis&quot;</span><span class="p">,</span><span class="s2">&quot;year&quot;</span><span class="p">:</span><span class="s2">&quot;Jahr&quot;</span><span class="p">},</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Preis / Jahr&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">({</span>
+<span class="s1">&#39;plot_bgcolor&#39;</span><span class="p">:</span> <span class="s1">&#39;rgba(0, 0, 0, 0)&#39;</span><span class="p">,</span>
+<span class="s1">&#39;paper_bgcolor&#39;</span><span class="p">:</span> <span class="s1">&#39;rgba(0, 0, 0, 0)&#39;</span><span class="p">,</span>
+<span class="p">})</span>
+<span class="n">st</span><span class="o">.</span><span class="n">plotly_chart</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+
+<span class="c1"># Visualisierung Jahr / Preis inkl. Schaltung</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="n">df_sample</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;price&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;transmission&quot;</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;price&quot;</span><span class="p">:</span><span class="s2">&quot;Preis&quot;</span><span class="p">,</span><span class="s2">&quot;year&quot;</span><span class="p">:</span><span class="s2">&quot;Jahr&quot;</span><span class="p">},</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Preis / Jahr inkl. Schaltung&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">({</span>
+<span class="s1">&#39;plot_bgcolor&#39;</span><span class="p">:</span> <span class="s1">&#39;rgba(0, 0, 0, 0)&#39;</span><span class="p">,</span>
+<span class="s1">&#39;paper_bgcolor&#39;</span><span class="p">:</span> <span class="s1">&#39;rgba(0, 0, 0, 0)&#39;</span><span class="p">,</span>
+<span class="p">})</span>
+<span class="n">st</span><span class="o">.</span><span class="n">plotly_chart</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="beispiel-prognose">
+<h2>Beispiel Prognose<a class="headerlink" href="#beispiel-prognose" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#-------------------</span>
+<span class="c1"># Import Python Bibliotheken</span>
+
+<span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span> 
+<span class="kn">from</span> <span class="nn">tensorflow.keras</span> <span class="kn">import</span> <span class="n">layers</span>
+
+<span class="c1">#-------------------</span>
+<span class="c1"># Titel und Beschreibung</span>
+
+<span class="n">st</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Dashboard MLOPS-Projekt&quot;</span><span class="p">)</span>
+
+<span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Beispielprognose für Gebrauchtwagen in den USA!&quot;</span><span class="p">)</span>
+
+<span class="c1">#-------------------</span>
+<span class="c1"># Import des Datensatzes</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;/Users/lukas/Desktop/car_price_final.csv&quot;</span><span class="p">)</span>
+
+<span class="c1">#Erstellung des Sample-Dataframes</span>
+<span class="n">df_sample</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Zufälliger Auszug aus dem Datensatz:&quot;</span><span class="p">)</span>
+<span class="n">st</span><span class="o">.</span><span class="n">dataframe</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df_sample</span><span class="p">)</span>
+
+<span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Vorhersage für ein zufälliges Auto aus dem Datensatz:&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">st</span><span class="o">.</span><span class="n">button</span><span class="p">(</span><span class="s2">&quot;Wähle ein zufälliges Auto aus&quot;</span><span class="p">):</span>
+    <span class="n">df_sample_input</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sample</span><span class="p">()</span>
+    <span class="n">year</span> <span class="o">=</span> <span class="n">df_sample_input</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;year&quot;</span><span class="p">]</span>
+    <span class="n">brand</span> <span class="o">=</span> <span class="n">df_sample_input</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;brand&quot;</span><span class="p">]</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">df_sample_input</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;model&quot;</span><span class="p">]</span>
+    <span class="n">trim</span> <span class="o">=</span> <span class="n">df_sample_input</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;trim&quot;</span><span class="p">]</span>
+    <span class="nb">type</span> <span class="o">=</span> <span class="n">df_sample_input</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;type&quot;</span><span class="p">]</span>
+    <span class="n">transmission</span> <span class="o">=</span> <span class="n">df_sample_input</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;transmission&quot;</span><span class="p">]</span>
+    <span class="n">state</span> <span class="o">=</span> <span class="n">df_sample_input</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;state&quot;</span><span class="p">]</span>
+    <span class="n">condition</span> <span class="o">=</span> <span class="n">df_sample_input</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;condition&quot;</span><span class="p">]</span>
+    <span class="n">odometer</span> <span class="o">=</span> <span class="n">df_sample_input</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;odometer&quot;</span><span class="p">]</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="n">df_sample_input</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;color&quot;</span><span class="p">]</span>
+    <span class="n">interior</span> <span class="o">=</span> <span class="n">df_sample_input</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;interior&quot;</span><span class="p">]</span>
+    <span class="n">seller</span> <span class="o">=</span> <span class="n">df_sample_input</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;seller&quot;</span><span class="p">]</span>
+    <span class="n">price</span> <span class="o">=</span> <span class="n">df_sample_input</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;price&quot;</span><span class="p">]</span>
+
+    <span class="c1"># Ausgabe der Inputs</span>
+    <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Ausgewählt wurde:&#39;</span><span class="p">,</span> 
+              <span class="s2">&quot;Baujahr: &quot;</span><span class="p">,</span><span class="n">year</span><span class="p">,</span>
+              <span class="s2">&quot;Marke: &quot;</span><span class="p">,</span><span class="n">brand</span><span class="p">,</span>
+             <span class="s2">&quot;Modell: &quot;</span> <span class="p">,</span> <span class="n">model</span><span class="p">,</span>
+             <span class="s2">&quot;Trim: &quot;</span> <span class="p">,</span> <span class="n">trim</span><span class="p">,</span>
+             <span class="s2">&quot;Type: &quot;</span> <span class="p">,</span> <span class="nb">type</span><span class="p">,</span>
+             <span class="s2">&quot;Transmission: &quot;</span> <span class="p">,</span> <span class="n">transmission</span><span class="p">,</span>
+             <span class="s2">&quot;State: &quot;</span> <span class="p">,</span> <span class="n">state</span><span class="p">,</span>
+              <span class="s2">&quot;Condition: &quot;</span> <span class="p">,</span> <span class="n">condition</span><span class="p">,</span>
+             <span class="s2">&quot;Odometer: &quot;</span> <span class="p">,</span> <span class="n">odometer</span><span class="p">,</span>
+             <span class="s2">&quot;Color: &quot;</span> <span class="p">,</span> <span class="n">color</span><span class="p">,</span>
+             <span class="s2">&quot;Interior: &quot;</span> <span class="p">,</span> <span class="n">interior</span><span class="p">,</span>
+             <span class="s2">&quot;Seller: &quot;</span> <span class="p">,</span> <span class="n">seller</span><span class="p">)</span>
+    <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Korrekter Preis in USD:&quot;</span><span class="p">,</span> <span class="n">price</span><span class="p">)</span>
+    
+    <span class="c1"># Modell</span>
+
+    <span class="n">input_data</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;year&quot;</span><span class="p">:</span><span class="n">year</span><span class="p">,</span>
+        <span class="s2">&quot;brand&quot;</span><span class="p">:</span><span class="n">brand</span><span class="p">,</span>
+        <span class="s2">&quot;model&quot;</span><span class="p">:</span><span class="n">model</span><span class="p">,</span>
+        <span class="s2">&quot;trim&quot;</span><span class="p">:</span> <span class="n">trim</span><span class="p">,</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="nb">type</span><span class="p">,</span>
+        <span class="s2">&quot;transmission&quot;</span><span class="p">:</span> <span class="n">transmission</span><span class="p">,</span>
+        <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="n">state</span><span class="p">,</span>
+        <span class="s2">&quot;condition&quot;</span><span class="p">:</span> <span class="n">condition</span><span class="p">,</span>
+        <span class="s2">&quot;odometer&quot;</span><span class="p">:</span> <span class="n">odometer</span><span class="p">,</span>
+        <span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="n">color</span><span class="p">,</span>
+        <span class="s2">&quot;interior&quot;</span><span class="p">:</span> <span class="n">interior</span><span class="p">,</span>
+        <span class="s2">&quot;seller&quot;</span><span class="p">:</span> <span class="n">seller</span><span class="p">,</span>
+    <span class="p">}</span>
+
+    <span class="n">reloaded_model</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s1">&#39;keras_cars&#39;</span><span class="p">)</span>
+
+    <span class="n">input_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="n">tf</span><span class="o">.</span><span class="n">convert_to_tensor</span><span class="p">([</span><span class="n">value</span><span class="p">])</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">input_data</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+
+    <span class="n">predictions</span> <span class="o">=</span> <span class="n">reloaded_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">input_dict</span><span class="p">)</span>
+
+    <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;------Prognose-------&quot;</span><span class="p">)</span>
+    <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Prognose in USD:&quot;</span><span class="p">,</span> <span class="n">predictions</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="individuelle-preisprognose">
+<h2>Individuelle Preisprognose<a class="headerlink" href="#individuelle-preisprognose" title="Permalink to this headline">¶</a></h2>
+<p>Innerhalb der Seite wird exemplarisch dargestellt, wie Abhängigkeiten zwischen Inputfeldern mithilfe einfacher If-Abfragen umgesetzt werden können. Eine verbesserte Lösung der Abhängigkeiten könnte mit einer Anbindung an eine Datenbank oder API bzw. eine JSON-Datei mit allen Informationen zu möglichen Konfigurationen umgesetzt werden.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#-------------------</span>
+<span class="c1"># Import Python Bibliotheken</span>
+
+<span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span> 
+<span class="kn">from</span> <span class="nn">tensorflow.keras</span> <span class="kn">import</span> <span class="n">layers</span>
+
+<span class="c1">#-------------------</span>
+<span class="c1"># Titel und Beschreibung</span>
+
+<span class="n">st</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Dashboard MLOPS-Projekt&quot;</span><span class="p">)</span>
+
+<span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Prognose für Gebrauchtwagen in den USA&quot;</span><span class="p">)</span>
+
+<span class="c1">#-------------------</span>
+<span class="c1"># Input Felder</span>
+
+<span class="n">year</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">slider</span><span class="p">(</span>
+     <span class="s1">&#39;Wähle das Baujahr aus&#39;</span><span class="p">,</span>
+     <span class="mi">2000</span><span class="p">,</span> <span class="mi">2015</span><span class="p">,</span> <span class="mi">2010</span><span class="p">)</span>
+
+<span class="n">brand</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">selectbox</span><span class="p">(</span>
+     <span class="s1">&#39;Wählen Sie die Automarke aus:&#39;</span><span class="p">,</span>
+     <span class="p">(</span><span class="s1">&#39;bmw&#39;</span><span class="p">,</span> <span class="s1">&#39;kia&#39;</span><span class="p">,</span> <span class="s1">&#39;mercedes&#39;</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="n">brand</span> <span class="o">==</span> <span class="s2">&quot;bmw&quot;</span><span class="p">:</span>
+     <span class="n">model</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">selectbox</span><span class="p">(</span>
+     <span class="s1">&#39;Wählen Sie das Modell aus:&#39;</span><span class="p">,</span>
+     <span class="p">(</span><span class="s1">&#39;1 series&#39;</span><span class="p">,</span> <span class="s1">&#39;2 series&#39;</span><span class="p">,</span> <span class="s1">&#39;3 series&#39;</span><span class="p">,</span><span class="s1">&#39;4 series&#39;</span><span class="p">,</span><span class="s1">&#39;5 series&#39;</span><span class="p">,</span><span class="s1">&#39;6 series&#39;</span><span class="p">,</span><span class="s1">&#39;7 series&#39;</span><span class="p">,</span><span class="s1">&#39;8 series&#39;</span><span class="p">))</span>
+
+     <span class="k">if</span> <span class="n">model</span> <span class="o">==</span> <span class="s2">&quot;1 series&quot;</span><span class="p">:</span>
+          <span class="n">trim</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">selectbox</span><span class="p">(</span>
+          <span class="s1">&#39;Wählen Sie die Trim aus:&#39;</span><span class="p">,</span>
+          <span class="p">(</span><span class="s1">&#39;128i&#39;</span><span class="p">,</span><span class="s1">&#39;135i&#39;</span><span class="p">,</span><span class="s1">&#39;135is&#39;</span><span class="p">))</span>
+
+          <span class="nb">type</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">selectbox</span><span class="p">(</span>
+               <span class="s1">&#39;Wählen Sie den Type aus:&#39;</span><span class="p">,</span>
+               <span class="p">(</span><span class="s1">&#39;convertible&#39;</span><span class="p">,</span><span class="s1">&#39;coupe&#39;</span><span class="p">))</span>
+     
+     <span class="k">elif</span> <span class="n">model</span> <span class="o">==</span> <span class="s2">&quot;2 series&quot;</span><span class="p">:</span>
+          <span class="n">trim</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">selectbox</span><span class="p">(</span>
+          <span class="s1">&#39;Wählen Sie die Trim aus:&#39;</span><span class="p">,</span>
+          <span class="p">(</span><span class="s1">&#39;228i&#39;</span><span class="p">,</span><span class="s1">&#39;M235i&#39;</span><span class="p">))</span>
+
+          <span class="nb">type</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">text_input</span><span class="p">(</span><span class="s1">&#39;Geben Sie den Type ein:&#39;</span><span class="p">,</span> <span class="s1">&#39;coupe&#39;</span><span class="p">)</span>
+     
+     <span class="k">elif</span> <span class="n">model</span> <span class="o">==</span> <span class="s2">&quot;3 series&quot;</span><span class="p">:</span>
+          <span class="n">trim</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">selectbox</span><span class="p">(</span>
+          <span class="s1">&#39;Wählen Sie die Trim aus:&#39;</span><span class="p">,</span>
+          <span class="p">(</span><span class="s1">&#39;318i&#39;</span><span class="p">,</span><span class="s1">&#39;320i&#39;</span><span class="p">,</span><span class="s1">&#39;323i&#39;</span><span class="p">,</span><span class="s1">&#39;325i&#39;</span><span class="p">,</span><span class="s1">&#39;328i&#39;</span><span class="p">,</span><span class="s1">&#39;330i&#39;</span><span class="p">))</span>
+
+          <span class="nb">type</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">selectbox</span><span class="p">(</span>
+               <span class="s1">&#39;Wählen Sie den Type aus:&#39;</span><span class="p">,</span>
+               <span class="p">(</span><span class="s1">&#39;convertible&#39;</span><span class="p">,</span><span class="s1">&#39;coupe&#39;</span><span class="p">,</span><span class="s1">&#39;sedan&#39;</span><span class="p">))</span>
+     
+     <span class="k">elif</span> <span class="n">model</span> <span class="o">==</span> <span class="s2">&quot;4 series&quot;</span><span class="p">:</span>
+          <span class="n">trim</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">selectbox</span><span class="p">(</span>
+          <span class="s1">&#39;Wählen Sie die Trim aus:&#39;</span><span class="p">,</span>
+          <span class="p">(</span><span class="s1">&#39;428i&#39;</span><span class="p">,</span><span class="s1">&#39;435i&#39;</span><span class="p">))</span>
+
+          <span class="nb">type</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">selectbox</span><span class="p">(</span>
+               <span class="s1">&#39;Wählen Sie den Type aus:&#39;</span><span class="p">,</span>
+               <span class="p">(</span><span class="s1">&#39;convertible&#39;</span><span class="p">,</span><span class="s1">&#39;coupe&#39;</span><span class="p">))</span>
+     
+     <span class="k">elif</span> <span class="n">model</span> <span class="o">==</span> <span class="s2">&quot;5 series&quot;</span><span class="p">:</span>
+          <span class="n">trim</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">selectbox</span><span class="p">(</span>
+          <span class="s1">&#39;Wählen Sie die Trim aus:&#39;</span><span class="p">,</span>
+          <span class="p">(</span><span class="s1">&#39;525i&#39;</span><span class="p">,</span><span class="s1">&#39;528i&#39;</span><span class="p">,</span><span class="s1">&#39;530i&#39;</span><span class="p">,</span><span class="s1">&#39;535i&#39;</span><span class="p">,</span><span class="s1">&#39;540i&#39;</span><span class="p">))</span>
+
+          <span class="nb">type</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">selectbox</span><span class="p">(</span>
+               <span class="s1">&#39;Wählen Sie den Type aus:&#39;</span><span class="p">,</span>
+               <span class="p">(</span><span class="s1">&#39;sedan&#39;</span><span class="p">,</span><span class="s1">&#39;wagon&#39;</span><span class="p">))</span>
+
+     <span class="k">elif</span> <span class="n">model</span> <span class="o">==</span> <span class="s2">&quot;6 series&quot;</span><span class="p">:</span>
+          <span class="n">trim</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">selectbox</span><span class="p">(</span>
+          <span class="s1">&#39;Wählen Sie die Trim aus:&#39;</span><span class="p">,</span>
+          <span class="p">(</span><span class="s1">&#39;640i&#39;</span><span class="p">,</span><span class="s1">&#39;650i&#39;</span><span class="p">))</span>
+
+          <span class="nb">type</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">selectbox</span><span class="p">(</span>
+               <span class="s1">&#39;Wählen Sie den Type aus:&#39;</span><span class="p">,</span>
+               <span class="p">(</span><span class="s1">&#39;convertible&#39;</span><span class="p">,</span><span class="s1">&#39;coupe&#39;</span><span class="p">))</span>
+
+     <span class="k">elif</span> <span class="n">model</span> <span class="o">==</span> <span class="s2">&quot;7 series&quot;</span><span class="p">:</span>
+          <span class="n">trim</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">selectbox</span><span class="p">(</span>
+          <span class="s1">&#39;Wählen Sie die Trim aus:&#39;</span><span class="p">,</span>
+          <span class="p">(</span><span class="s1">&#39;740i&#39;</span><span class="p">,</span><span class="s1">&#39;745i&#39;</span><span class="p">,</span><span class="s1">&#39;750i&#39;</span><span class="p">))</span>
+
+          <span class="nb">type</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">text_input</span><span class="p">(</span><span class="s1">&#39;Geben Sie den Type ein:&#39;</span><span class="p">,</span> <span class="s1">&#39;sedan&#39;</span><span class="p">)</span>
+     
+     <span class="k">else</span><span class="p">:</span>
+          <span class="n">trim</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">text_input</span><span class="p">(</span><span class="s1">&#39;Geben Sie die Trim ein:&#39;</span><span class="p">,</span> <span class="s1">&#39;850i&#39;</span><span class="p">)</span>
+
+          <span class="nb">type</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">text_input</span><span class="p">(</span><span class="s1">&#39;Geben Sie den Type ein:&#39;</span><span class="p">,</span> <span class="s1">&#39;coupe&#39;</span><span class="p">)</span>
+
+<span class="k">else</span><span class="p">:</span>
+     <span class="n">model</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">text_input</span><span class="p">(</span><span class="s1">&#39;Geben Sie das Modell an&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+     <span class="n">trim</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">text_input</span><span class="p">(</span><span class="s1">&#39;Geben Sie die Trim ein:&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+     <span class="nb">type</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">text_input</span><span class="p">(</span><span class="s1">&#39;Geben Sie den Type ein:&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+     
+
+<span class="n">transmission</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">selectbox</span><span class="p">(</span>
+     <span class="s1">&#39;Wählen Sie die Transmission aus:&#39;</span><span class="p">,</span>
+     <span class="p">(</span><span class="s1">&#39;manual&#39;</span><span class="p">,</span> <span class="s1">&#39;automatic&#39;</span><span class="p">))</span>
+
+<span class="n">state</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">selectbox</span><span class="p">(</span>
+     <span class="s1">&#39;Wählen Sie den US-Staat aus:&#39;</span><span class="p">,</span>
+     <span class="p">(</span><span class="s1">&#39;ca&#39;</span><span class="p">,</span><span class="s1">&#39;tx&#39;</span><span class="p">,</span><span class="s1">&#39;az&#39;</span><span class="p">,</span><span class="s1">&#39;wi&#39;</span><span class="p">,</span><span class="s1">&#39;fl&#39;</span><span class="p">,</span><span class="s1">&#39;ny&#39;</span><span class="p">))</span>
+
+<span class="n">condition</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">slider</span><span class="p">(</span>
+     <span class="s1">&#39;Wähle das Baujahr aus&#39;</span><span class="p">,</span>
+     <span class="mf">1.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">0.1</span> <span class="p">)</span>
+
+<span class="n">odometer</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">number_input</span><span class="p">(</span><span class="s1">&#39;Gebe den Kilometerstand an&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="n">color</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">selectbox</span><span class="p">(</span>
+     <span class="s1">&#39;Wählen Sie eine Farbe aus:&#39;</span><span class="p">,</span>
+     <span class="p">(</span><span class="s1">&#39;white&#39;</span><span class="p">,</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="s1">&#39;silver&#39;</span><span class="p">,</span><span class="s1">&#39;brown&#39;</span><span class="p">,</span><span class="s1">&#39;beige&#39;</span><span class="p">,</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="s1">&#39;red&#39;</span><span class="p">))</span>
+
+<span class="n">interior</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">selectbox</span><span class="p">(</span>
+     <span class="s1">&#39;Wählen Sie eine Farbe aus:&#39;</span><span class="p">,</span>
+     <span class="p">(</span><span class="s1">&#39;white&#39;</span><span class="p">,</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="s1">&#39;beige&#39;</span><span class="p">,</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="s1">&#39;red&#39;</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="n">brand</span> <span class="o">==</span> <span class="s2">&quot;bmw&quot;</span><span class="p">:</span>
+     <span class="n">seller</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">text_input</span><span class="p">(</span><span class="s1">&#39;Gebe den Verkäufer an&#39;</span><span class="p">,</span> <span class="s1">&#39;the hertz corporation&#39;</span><span class="p">)</span>
+
+<span class="k">else</span><span class="p">:</span>
+     <span class="n">seller</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">text_input</span><span class="p">(</span><span class="s1">&#39;Gebe den Verkäufer an&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+<span class="c1">#-------------------</span>
+<span class="c1"># Ausgabe der Inputs</span>
+
+<span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Ausgewählt wurde:&#39;</span><span class="p">,</span> 
+          <span class="s2">&quot;Baujahr: &quot;</span><span class="p">,</span><span class="n">year</span><span class="p">,</span>
+           <span class="s2">&quot;Marke: &quot;</span><span class="p">,</span><span class="n">brand</span><span class="p">,</span>
+           <span class="s2">&quot;Modell: &quot;</span> <span class="p">,</span> <span class="n">model</span><span class="p">,</span>
+           <span class="s2">&quot;Trim: &quot;</span> <span class="p">,</span> <span class="n">trim</span><span class="p">,</span>
+           <span class="s2">&quot;Type: &quot;</span> <span class="p">,</span> <span class="nb">type</span><span class="p">,</span>
+           <span class="s2">&quot;Transmission: &quot;</span> <span class="p">,</span> <span class="n">transmission</span><span class="p">,</span>
+           <span class="s2">&quot;State: &quot;</span> <span class="p">,</span> <span class="n">state</span><span class="p">,</span>
+           <span class="s2">&quot;Condition: &quot;</span> <span class="p">,</span> <span class="n">condition</span><span class="p">,</span>
+           <span class="s2">&quot;Odometer: &quot;</span> <span class="p">,</span> <span class="n">odometer</span><span class="p">,</span>
+           <span class="s2">&quot;Color: &quot;</span> <span class="p">,</span> <span class="n">color</span><span class="p">,</span>
+           <span class="s2">&quot;Interior: &quot;</span> <span class="p">,</span> <span class="n">interior</span><span class="p">,</span>
+           <span class="s2">&quot;Seller: &quot;</span> <span class="p">,</span> <span class="n">seller</span><span class="p">)</span>
+
+<span class="c1">#-------------------#</span>
+<span class="c1"># Modell</span>
+
+<span class="n">input_data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;year&quot;</span><span class="p">:</span><span class="n">year</span><span class="p">,</span>
+    <span class="s2">&quot;brand&quot;</span><span class="p">:</span><span class="n">brand</span><span class="p">,</span>
+    <span class="s2">&quot;model&quot;</span><span class="p">:</span><span class="n">model</span><span class="p">,</span>
+    <span class="s2">&quot;trim&quot;</span><span class="p">:</span> <span class="n">trim</span><span class="p">,</span>
+    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="nb">type</span><span class="p">,</span>
+    <span class="s2">&quot;transmission&quot;</span><span class="p">:</span> <span class="n">transmission</span><span class="p">,</span>
+    <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="n">state</span><span class="p">,</span>
+    <span class="s2">&quot;condition&quot;</span><span class="p">:</span> <span class="n">condition</span><span class="p">,</span>
+    <span class="s2">&quot;odometer&quot;</span><span class="p">:</span> <span class="n">odometer</span><span class="p">,</span>
+    <span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="n">color</span><span class="p">,</span>
+    <span class="s2">&quot;interior&quot;</span><span class="p">:</span> <span class="n">interior</span><span class="p">,</span>
+    <span class="s2">&quot;seller&quot;</span><span class="p">:</span> <span class="n">seller</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">reloaded_model</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s1">&#39;my_hd_classifier&#39;</span><span class="p">)</span>
+
+<span class="n">input_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="n">tf</span><span class="o">.</span><span class="n">convert_to_tensor</span><span class="p">([</span><span class="n">value</span><span class="p">])</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">input_data</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+
+<span class="n">predictions</span> <span class="o">=</span> <span class="n">reloaded_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">input_dict</span><span class="p">)</span>
+
+<span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Prognose in USD:&quot;</span><span class="p">)</span>
+<span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">predictions</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      Durch Lukas Laib<br/>
+    
+        &copy; Urheberrechte © 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
