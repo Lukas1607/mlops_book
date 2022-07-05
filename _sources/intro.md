@@ -4,3 +4,4 @@ Innerhalb dieser Dokumentation befinden sich Erklärungen und Ausführungen des 
 
 ```{tableofcontents}
 ```
+*Aufgrund des Aufgabenwechsels (Mitte Mai) befindet sich auch ein Teil der vorangegangen Bearbeitung innerhalb des Notebooks (Sktime - Forecasting).*

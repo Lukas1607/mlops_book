@@ -50,7 +50,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Data Understanding &amp; Data Correction" href="dataexplorationcopy.html" />
+    <link rel="next" title="1. Data Understanding &amp; Data Correction" href="dataexplorationcopy.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -97,7 +97,32 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="dataexplorationcopy.html">
-   Data Understanding &amp; Data Correction
+   1. Data Understanding &amp; Data Correction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="kerasmodelcopy.html">
+   2. Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="sklearn_shap_tunercopy.html">
+   3. Kerastuner und SHAP
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dashboard_infocopy.html">
+   4. Dashboard
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="airflow_infocopy.html">
+   5. Apache Airflow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="sktime_m5copy.html">
+   Timeseries forecasting using Sktime
   </a>
  </li>
 </ul>
@@ -205,13 +230,36 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Innerhalb dieser Dokumentation befinden sich Erklärungen und Ausführungen des Projekts Data Science &amp; MLOps (SS22) rund um den Datensatz “Used Car Auction Prices”.</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="dataexplorationcopy.html">Data Understanding &amp; Data Correction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataexplorationcopy.html">1. Data Understanding &amp; Data Correction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dataexplorationcopy.html#import-data-packages">1.1 Import Data &amp; Packages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dataexplorationcopy.html#data-overview">1.2 Data Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dataexplorationcopy.html#data-correction">1.3 Data Correction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dataexplorationcopy.html#data-exploration">1.4 Data Exploration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kerasmodelcopy.html">2. Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kerasmodelcopy.html#import-data-packages">2.1 Import Data &amp; Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kerasmodelcopy.html#data">2.2 Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kerasmodelcopy.html#feature-preprocessing">Feature preprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kerasmodelcopy.html#id1">2.3 Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kerasmodelcopy.html#perform-inference">2.4 Perform inference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sklearn_shap_tunercopy.html">3. Kerastuner und SHAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sklearn_shap_tunercopy.html#data">3.2 Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sklearn_shap_tunercopy.html#kerastuner">3.3 Kerastuner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sklearn_shap_tunercopy.html#shap">SHAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dashboard_infocopy.html">4. Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="airflow_infocopy.html">5. Apache Airflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="airflow_infocopy.html#vorgehen">5.1 Vorgehen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="airflow_infocopy.html#dateiubersicht">5.2 Dateiübersicht</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sktime_m5copy.html">Timeseries forecasting using Sktime</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sktime_m5copy.html#import-data-and-packages">Import Data and Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sktime_m5copy.html#overview">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sktime_m5copy.html#data-format">Data format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sktime_m5copy.html#data-split">Data Split</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sktime_m5copy.html#forecasting-horizon">Forecasting horizon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sktime_m5copy.html#model-timeseries-forecasts">Model - Timeseries forecasts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sktime_m5copy.html#sales-in-california">Sales in California</a></li>
 </ul>
 </div>
+<p><em>Aufgrund des Aufgabenwechsels (Mitte Mai) befindet sich auch ein Teil der vorangegangen Bearbeitung innerhalb des Notebooks (Sktime - Forecasting).</em></p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -242,7 +290,7 @@ const thebe_selector_output = ".output, .cell_output"
     <a class='right-next' id="next-link" href="dataexplorationcopy.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Data Understanding &amp; Data Correction</p>
+        <p class="prev-next-title">1. Data Understanding &amp; Data Correction</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

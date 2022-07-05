@@ -42,7 +42,7 @@ st.markdown(
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-[0;32m/var/folders/df/nc1vtthj247d1h5l5689kdxh0000gn/T/ipykernel_48662/3001522037.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/var/folders/df/nc1vtthj247d1h5l5689kdxh0000gn/T/ipykernel_49977/3001522037.py[0m in [0;36m<module>[0;34m[0m
 [1;32m      1[0m [0;31m#-------------------[0m[0;34m[0m[0;34m[0m[0m
 [1;32m      2[0m [0;31m# Import Python Bibliotheken[0m[0;34m[0m[0;34m[0m[0m
 [0;32m----> 3[0;31m [0;32mimport[0m [0mstreamlit[0m [0;32mas[0m [0mst[0m[0;34m[0m[0;34m[0m[0m

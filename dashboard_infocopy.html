@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard &#8212; Data Science and MLOps</title>
+    <title>4. Dashboard &#8212; Data Science and MLOps</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -50,6 +50,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="5. Apache Airflow" href="airflow_infocopy.html" />
+    <link rel="prev" title="3. Kerastuner und SHAP" href="sklearn_shap_tunercopy.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -93,10 +95,35 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="dataexplorationcopy.html">
-   Data Understanding &amp; Data Correction
+   1. Data Understanding &amp; Data Correction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="kerasmodelcopy.html">
+   2. Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="sklearn_shap_tunercopy.html">
+   3. Kerastuner und SHAP
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   4. Dashboard
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="airflow_infocopy.html">
+   5. Apache Airflow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="sktime_m5copy.html">
+   Timeseries forecasting using Sktime
   </a>
  </li>
 </ul>
@@ -188,22 +215,22 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#home">
-   Home
+   4.1 Home
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#eda">
-   EDA
+   4.2 EDA
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#beispiel-prognose">
-   Beispiel Prognose
+   4.3 Beispiel Prognose
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#individuelle-preisprognose">
-   Individuelle Preisprognose
+   4.4 Individuelle Preisprognose
   </a>
  </li>
 </ul>
@@ -216,7 +243,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Dashboard</h1>
+                <h1>4. Dashboard</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -228,22 +255,22 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#home">
-   Home
+   4.1 Home
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#eda">
-   EDA
+   4.2 EDA
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#beispiel-prognose">
-   Beispiel Prognose
+   4.3 Beispiel Prognose
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#individuelle-preisprognose">
-   Individuelle Preisprognose
+   4.4 Individuelle Preisprognose
   </a>
  </li>
 </ul>
@@ -256,13 +283,13 @@ const thebe_selector_output = ".output, .cell_output"
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="dashboard">
-<h1>Dashboard<a class="headerlink" href="#dashboard" title="Permalink to this headline">¶</a></h1>
+<h1>4. Dashboard<a class="headerlink" href="#dashboard" title="Permalink to this headline">¶</a></h1>
 <p>Das gesamte Dashboard wurde mit der Python-Bibliothek Streamlit erstellt. Das Dashboard teilt sich dabei in vier Sichten auf: Home, EDA, Beispiel_Prognose und Individuelle Preisprognose für Gebrauchtwagen. <br><br>
 Die Home bzw. Startseite gibt Nutzern einen kurzen Überblick über die Möglichkeiten und Optionen des Dashboards. Innerhalb der Seite EDA werden hingegen einige Visualisierungen aus der explorativen Datenanalyse dargestellt.
 In der Sicht Beispiel_Prognose können Preisprognosen des Modells dem “echten” Verkaufspreis gegenübergestellt werden dabei werden zufällige Gebrauchtwagen aus dem Datensatz herangezogen. Innerhalb der Seite zu individuellen Preisprognose können individuell Eingaben getätigt werden, um für eigene Autokonfigurationen Verkaufspreise vorherzusagen.</p>
 <div class="section" id="home">
-<h2>Home<a class="headerlink" href="#home" title="Permalink to this headline">¶</a></h2>
-<p>Die Homeseite ist einfach strukturiert und stellt lediglich Text innerhalb des Dashboards dar.</p>
+<h2>4.1 Home<a class="headerlink" href="#home" title="Permalink to this headline">¶</a></h2>
+<p>Die Homeseite ist einfach strukturiert und stellt lediglich Text innerhalb des Dashboards dar. Für die Darstellung des Text kann “st.markdown” verwendet werden.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#-------------------</span>
@@ -291,7 +318,7 @@ In der Sicht Beispiel_Prognose können Preisprognosen des Modells dem “echten�
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">df</span><span class="o">/</span><span class="n">nc1vtthj247d1h5l5689kdxh0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_48662</span><span class="o">/</span><span class="mf">3001522037.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">df</span><span class="o">/</span><span class="n">nc1vtthj247d1h5l5689kdxh0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_49977</span><span class="o">/</span><span class="mf">3001522037.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#-------------------</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1"># Import Python Bibliotheken</span>
 <span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
@@ -305,8 +332,9 @@ In der Sicht Beispiel_Prognose können Preisprognosen des Modells dem “echten�
 </div>
 </div>
 <div class="section" id="eda">
-<h2>EDA<a class="headerlink" href="#eda" title="Permalink to this headline">¶</a></h2>
-<p>Plots innerhalb der EDA-Seite wurden mit Plotly dargestellt. Die Visaulisierungen sind dabei ein Auszug aus dem Punkt Data Understanding &amp; Correction.</p>
+<h2>4.2 EDA<a class="headerlink" href="#eda" title="Permalink to this headline">¶</a></h2>
+<p>Plots innerhalb der EDA-Seite wurden mit Plotly dargestellt. Die Visaulisierungen sind dabei ein Auszug aus dem Punkt Data Understanding &amp; Correction.<br><br>
+Besonders wichtig ist dabei, dass Visualisierungen innerhalb von Streamlit, welche mittels der Plotly-Bibliothek erstellt werden nicht mit “fig.show()” ausgegeben werden. Hingegen müssen Visualisierungen sofern diese in der jeweiligen Sicht dargestellt werden sollen mit “st.plotly_chart(fig)” visualisiert werden.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#-------------------</span>
@@ -383,7 +411,9 @@ In der Sicht Beispiel_Prognose können Preisprognosen des Modells dem “echten�
 </div>
 </div>
 <div class="section" id="beispiel-prognose">
-<h2>Beispiel Prognose<a class="headerlink" href="#beispiel-prognose" title="Permalink to this headline">¶</a></h2>
+<h2>4.3 Beispiel Prognose<a class="headerlink" href="#beispiel-prognose" title="Permalink to this headline">¶</a></h2>
+<p>Die Beispielprognose teilt sich wie die individual Prognose-Seite insbesondere in zwei Teile im Kontext der Modellnutzung auf: - Modell Input, - Modell Prediction <br><br>
+Innerhalb des Modell Inputs wird in der Beispiel Prognose zufällig mit “sample” eine Beispielkonfiguration ausgewählt und als Modellinput verwendet. Dabei wird die ausgewählte Konfiguration dem Nutzer angezeigt. <br> Bei der Modell Prediction wird zuerst das Modell geladen und anschließend basierend auf dem Input eine Vorhersage prognostiziert.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#-------------------</span>
@@ -477,8 +507,9 @@ In der Sicht Beispiel_Prognose können Preisprognosen des Modells dem “echten�
 </div>
 </div>
 <div class="section" id="individuelle-preisprognose">
-<h2>Individuelle Preisprognose<a class="headerlink" href="#individuelle-preisprognose" title="Permalink to this headline">¶</a></h2>
+<h2>4.4 Individuelle Preisprognose<a class="headerlink" href="#individuelle-preisprognose" title="Permalink to this headline">¶</a></h2>
 <p>Innerhalb der Seite wird exemplarisch dargestellt, wie Abhängigkeiten zwischen Inputfeldern mithilfe einfacher If-Abfragen umgesetzt werden können. Eine verbesserte Lösung der Abhängigkeiten könnte mit einer Anbindung an eine Datenbank oder API bzw. eine JSON-Datei mit allen Informationen zu möglichen Konfigurationen umgesetzt werden.</p>
+<p>Der Unterschied zwischen der Beispiel-Prognose und der Individual-Prognose ist, dass die Inputs nur bei der individuellen Prognose frei gewählt werden können. Durch die freie Auswahl kann (bei der Individual-Prognose)jedoch nicht der “echte” Verkaufspreis als Vergleich angezeigt werden, da hier keine Vergleichsdaten hinterlegt sind.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#-------------------</span>
@@ -649,7 +680,7 @@ In der Sicht Beispiel_Prognose können Preisprognosen des Modells dem “echten�
     <span class="s2">&quot;seller&quot;</span><span class="p">:</span> <span class="n">seller</span><span class="p">,</span>
 <span class="p">}</span>
 
-<span class="n">reloaded_model</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s1">&#39;my_hd_classifier&#39;</span><span class="p">)</span>
+<span class="n">reloaded_model</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s1">&#39;keras_cars&#39;</span><span class="p">)</span>
 
 <span class="n">input_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="n">tf</span><span class="o">.</span><span class="n">convert_to_tensor</span><span class="p">([</span><span class="n">value</span><span class="p">])</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">input_data</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
 
@@ -688,7 +719,21 @@ In der Sicht Beispiel_Prognose können Preisprognosen des Modells dem “echten�
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="sklearn_shap_tunercopy.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">3. Kerastuner und SHAP</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="airflow_infocopy.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">5. Apache Airflow</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             
         </div>

@@ -50,6 +50,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="5. Apache Airflow" href="airflow_infocopy.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -93,10 +94,35 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="dataexplorationcopy.html">
-   Data Understanding &amp; Data Correction
+   1. Data Understanding &amp; Data Correction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="kerasmodelcopy.html">
+   2. Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="sklearn_shap_tunercopy.html">
+   3. Kerastuner und SHAP
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dashboard_infocopy.html">
+   4. Dashboard
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="airflow_infocopy.html">
+   5. Apache Airflow
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Timeseries forecasting using Sktime
   </a>
  </li>
 </ul>
@@ -362,7 +388,8 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="timeseries-forecasting-using-sktime">
 <h1>Timeseries forecasting using Sktime<a class="headerlink" href="#timeseries-forecasting-using-sktime" title="Permalink to this headline">¶</a></h1>
-<p>Innerhalb dieses Notebooks wird mithilfe der Python Bibliothek Sktime eine Prognose für die zukünftigen Verkäufe von (einem) Produkt(en) durchgeführt.</p>
+<p><em>Dies ist eine einfache Prognose mit Sktime für das Thema Zeitreihenanalysen, da ich dieses Semester mit der Aufgabe Zeitreihenanalysen startete. Allerdings habe ich aufgrund von wiederkehrenden Problemen den Datensatz zu den “Used Car Auction Prices”-Daten gewechselt. Aufgrund des Wechsels ist das “Timeseries forecasting using Sktime”-Notebook das einzige Notebook, welches ansatzweise fertiggestellt werden konnte.</em></p>
+<p>Innerhalb dieses Notebooks wird mithilfe der Python Bibliothek Sktime eine Prognose für die zukünftigen Verkäufe von (einem) Produkt(en) durchgeführt. Dabei werden die Daten der m5-competition von Walmart herangezogen.</p>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="import-data-and-packages">
 <h1>Import Data and Packages<a class="headerlink" href="#import-data-and-packages" title="Permalink to this headline">¶</a></h1>
@@ -406,9 +433,7 @@ const thebe_selector_output = ".output, .cell_output"
   RELATIVE_TYPES = (pd.Int64Index, pd.RangeIndex)
 /opt/anaconda3/lib/python3.9/site-packages/sktime/forecasting/base/_fh.py:19: FutureWarning: pandas.Int64Index is deprecated and will be removed from pandas in a future version. Use pandas.Index with the appropriate dtype instead.
   ABSOLUTE_TYPES = (pd.Int64Index, pd.RangeIndex, pd.DatetimeIndex, pd.PeriodIndex)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/lib/python3.9/site-packages/sktime/datatypes/_series/_check.py:43: FutureWarning: pandas.Int64Index is deprecated and will be removed from pandas in a future version. Use pandas.Index with the appropriate dtype instead.
+/opt/anaconda3/lib/python3.9/site-packages/sktime/datatypes/_series/_check.py:43: FutureWarning: pandas.Int64Index is deprecated and will be removed from pandas in a future version. Use pandas.Index with the appropriate dtype instead.
   VALID_INDEX_TYPES = (pd.Int64Index, pd.RangeIndex, pd.PeriodIndex, pd.DatetimeIndex)
 /opt/anaconda3/lib/python3.9/site-packages/sktime/datatypes/_hierarchical/_check.py:50: FutureWarning: pandas.Int64Index is deprecated and will be removed from pandas in a future version. Use pandas.Index with the appropriate dtype instead.
   VALID_INDEX_TYPES = (pd.Int64Index, pd.RangeIndex, pd.PeriodIndex, pd.DatetimeIndex)
@@ -1186,7 +1211,7 @@ memory usage: 45.5+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/df/nc1vtthj247d1h5l5689kdxh0000gn/T/ipykernel_48673/4201989889.py:1: SettingWithCopyWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/df/nc1vtthj247d1h5l5689kdxh0000gn/T/ipykernel_50002/4201989889.py:1: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
 
@@ -1542,7 +1567,7 @@ Name: 0, Length: 1941, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/df/nc1vtthj247d1h5l5689kdxh0000gn/T/ipykernel_48673/1654043994.py:21: SettingWithCopyWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/df/nc1vtthj247d1h5l5689kdxh0000gn/T/ipykernel_50002/1654043994.py:21: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
 
@@ -1731,7 +1756,14 @@ Mean absolute percentage error: 0.04883218758909261 KNeighborsRegressor
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="airflow_infocopy.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">5. Apache Airflow</p>
+        </div>
+    </a>
 </div>
             
         </div>
