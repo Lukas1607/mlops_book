@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # 1. Data Understanding & Data Correction
+# # Data Understanding & Data Correction
 # 
 # Im ersten Teil "Data Understanding & Data Correction" wird versucht, einen ersten Überblick über den Datensatz "Used Car Auction Prices" zu ermöglichen und Probleme innerhalb des Datensatzes in Bezug auf dessen Qualität zu identifizieren. Darüber hinaus wird der Datensatz innerhalb des Notebooks bereinigt, um die Vorbereitung für den folgenden Themenpunkt "Modeling" vorzubereiten.
 # 

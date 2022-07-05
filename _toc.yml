@@ -5,4 +5,9 @@ format: jb-book
 root: intro
 chapters:
 - file: dataexplorationcopy
+- file: kerasmodelcopy
+- file: sklearn_shap_tunercopy
+- file: dashboard_infocopy
+- file: airflow_infocopy
+- file: sktime_m5copy
 
